@@ -1,0 +1,25 @@
+version: '3'
+services:
+        myservice:
+                image: "registry.accelerator.fun:5000/thg-talk:${TAG}"
+                depends_on: ["db"]
+                container_name: "webapp"
+                environment:
+                        - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/demotask
+                        - KEYCLOAK_REALM-KEY=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhhl2V+varX3GU8JoRfvrVEYNr7u2xtrPHJ5kI6w3J7WHUOn3KvkfHbZCwvZkv3m9UduysscXNnRNhSqRRoBBS8fqgW3+Girodj/WAsGAvnAmyndAWQNN3QPKcHuk3CABFWX7HmCvB9/1owUvDy0FRYx29sBYSt6SefXDIfBygLDCrkJC4MeIFtIpPHpEyOX2L86VHEUXRqRcMiaPFbpiPHC8a22uXK5Rkv3Ig4m7fE8ImIn0jqkqDzjQCIdQ7YUS4imLfDcompfTVcoAEG12s9rIwImxl36VWhQTlvo8ey8LSdXzi8q8/VU7JuHu2xzY6xj6g0K9HTH28ZjOF9yzFQIDAQAB
+                        - KEYCLOAK_SSL-REQUIRED=none
+                ports:
+                        - "80:8080"
+        db:
+                image: "postgres"
+                container_name: "my_postgres"
+                ports:
+                        - "5432:5432"
+                environment:
+                        - POSTGRES_USER=postgres
+                        - POSTGRES_PASSWORD=password
+                        - POSTGRES_DB=demotask
+                        - POSTGRES_HOST_AUTH_METHOD=trust
+                volumes:
+                        - ./sql:/docker-entrypoint-initdb.d/
+                        - ./postgres-data:/var/lib/postgresql/data

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user page renders correctly 1`] = `
+<div>
+  <div
+    class="sc-fmlJLJ PdzRM"
+  >
+    <h1 />
+  </div>
+  <h3>
+    User since null null
+  </h3>
+  <div
+    class="sc-eFubAy gYWquK"
+  >
+    <button
+      class="sc-citwmv bekXhF"
+    >
+      <div
+        class="sc-jcVebW iaQcQW"
+        data-testid="menu-item-content"
+      >
+        Posts
+      </div>
+    </button>
+    <button
+      class="sc-citwmv fSTEwV"
+    >
+      <div
+        class="sc-jcVebW iaQcQW"
+      >
+        Comments
+      </div>
+    </button>
+  </div>
+  <div
+    class="sc-jGVbCA fDaAqa"
+  >
+    <div
+      class="ant-divider ant-divider-horizontal"
+      role="separator"
+    />
+    <div
+      class="sc-bQdQlF UwkmI"
+    >
+      <img
+        alt="loading spinner"
+        data-testid="loading-spinner"
+        src="/Spinner-0.4s-211px.gif"
+        style="width: 10%;"
+      />
+    </div>
+  </div>
+</div>
+`;

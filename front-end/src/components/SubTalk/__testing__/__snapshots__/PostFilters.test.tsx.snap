@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`post filters renders correctly 1`] = `
+<div>
+  <div
+    class="sc-fWSCIC IYOpa"
+  >
+    Sort by 
+    <div
+      class="MuiFormControl-root"
+    >
+      <div
+        aria-label="Dropdown"
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      >
+        <div
+          aria-haspopup="listbox"
+          class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+          role="button"
+          tabindex="0"
+        >
+          most popular
+        </div>
+        <input
+          aria-hidden="true"
+          class="MuiSelect-nativeInput"
+          data-testid="sort-select"
+          tabindex="-1"
+          value="most popular"
+        />
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSelect-icon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+      from the last 
+    <div
+      class="MuiFormControl-root"
+    >
+      <div
+        aria-label="Dropdown"
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl"
+      >
+        <div
+          aria-haspopup="listbox"
+          class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiInputBase-input MuiInput-input"
+          role="button"
+          tabindex="0"
+        >
+          all time
+        </div>
+        <input
+          aria-hidden="true"
+          class="MuiSelect-nativeInput"
+          data-testid="time-select"
+          tabindex="-1"
+          value="all time"
+        />
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSelect-icon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header Renders correctly 1`] = `
+<div>
+  <header
+    class="sc-crrsfI iCzbxF"
+  >
+    <div
+      data-testid="logo"
+    >
+      <a
+        aria-label="home"
+        class="sc-jrAGrp fgVdC"
+        href="/"
+      >
+        <img
+          alt="home"
+          class="sc-dQppl gdAUTa"
+          src="/MicrosoftTeams-image.png"
+        />
+      </a>
+    </div>
+    <div
+      class="sc-bqyKva cdRKVi"
+    >
+      <input
+        aria-label="Search"
+        class="sc-kstrdz fPywpH"
+        data-testid="search-box"
+        placeholder="Search for SubTalks..."
+        value=""
+      />
+      
+    </div>
+    <div>
+      <button
+        aria-label="Account"
+        class="sc-bdfBwQ ixYJDx"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root sc-eCssSg dkevko"
+          focusable="false"
+          style="margin: 0px; font-size: 1.5rem;"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+          />
+        </svg>
+      </button>
+    </div>
+  </header>
+</div>
+`;

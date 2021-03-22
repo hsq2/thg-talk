@@ -1,0 +1,7 @@
+{
+  "realm": "Accelerator",
+  "auth-server-url": "https://gb5.sandbox.keycloak.io.thehut.local/auth",
+  "ssl-required": "external",
+  "resource": "thg-talk",
+  "public-client": true
+}

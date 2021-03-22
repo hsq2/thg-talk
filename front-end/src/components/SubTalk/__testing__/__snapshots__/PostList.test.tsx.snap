@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post list renders correctly 1`] = `
+<div>
+  <div
+    class="sc-eLgOdN juTHbn"
+    data-testid="no-posts-yet"
+  >
+    No posts yet!
+  </div>
+</div>
+`;

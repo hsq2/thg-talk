@@ -1,0 +1,61 @@
+-- create database demotask;
+\connect demotask;
+
+CREATE TABLE Users(
+userID UUID PRIMARY KEY,
+userName VARCHAR(50) NOT NULL,
+dateCreated TIMESTAMP NOT NULL
+);
+
+CREATE TABLE SubTalks(
+subTalkID UUID PRIMARY KEY,
+creatorID UUID NOT NULL,
+subTalkTitle VARCHAR(50) NOT NULL,
+subTalkDescription TEXT NOT NULL,
+subTalkImageURL TEXT NOT NULL,
+dateCreated TIMESTAMP NOT NULL,
+FOREIGN KEY(creatorID) REFERENCES Users(userID)
+);
+
+CREATE TABLE Posts(
+postID UUID PRIMARY KEY,
+userID UUID NOT NULL,
+subTalkID UUID NOT NULL,
+postTitle VARCHAR(50) NOT NULL,
+postContent TEXT NOT NULL,
+dateCreated TIMESTAMP NOT NULL,
+FOREIGN KEY(userID) REFERENCES Users(userID),
+FOREIGN KEY(subTalkID) REFERENCES SubTalks(subTalkID)
+);
+
+CREATE TABLE Comments(
+commentID UUID PRIMARY KEY,
+userID UUID NOT NULL,
+postID UUID NOT NULL,
+commentContent TEXT NOT NULL,
+dateCreated TIMESTAMP NOT NULL,
+FOREIGN KEY(userID) REFERENCES Users(userID),
+FOREIGN KEY(postID) REFERENCES Posts(postID)
+);
+
+CREATE TYPE VOTE AS ENUM ('UPVOTE', 'DOWNVOTE');
+
+CREATE TABLE Votes(
+voteID UUID PRIMARY KEY,
+userID UUID NOT NULL,
+vote VOTE NOT NULL
+);
+
+CREATE TABLE VotesPosts(
+voteID UUID NOT NULL,
+postID UUID NOT NULL,
+FOREIGN KEY(voteID) REFERENCES Votes(voteID),
+FOREIGN KEY(postID) REFERENCES Posts(postID)
+);
+
+CREATE TABLE VotesComments(
+voteID UUID NOT NULL,
+commentID UUID NOT NULL,
+FOREIGN KEY(voteID) REFERENCES Votes(voteID),
+FOREIGN KEY(commentID) REFERENCES Comments(commentID)
+);

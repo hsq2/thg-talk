@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment row renders correctly 1`] = `
+<div>
+  <div
+    class="sc-eGCarw jtsnBd"
+  >
+    <div
+      class="sc-jQbIHB irXtYQ"
+    >
+      <button
+        aria-label="upvote"
+        class="sc-lcujXC qmURj"
+        data-testid="upvote-button"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root sc-dlfnbm edLazA"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+          />
+        </svg>
+      </button>
+      <img
+        alt="loading spinner"
+        data-testid="loading-spinner"
+        src="/Spinner-0.4s-211px.gif"
+        style="width: 10%;"
+      />
+      <button
+        aria-label="Downvote"
+        class="sc-lcujXC qmURj"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root sc-hKgILt czLCvW"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      class="sc-fvhGYg hhEbqV"
+    >
+      <button
+        aria-label="Close"
+        class="sc-XhUPp gJJtDW"
+      >
+        ×
+      </button>
+      <div
+        class="sc-GTWni eAGcUV"
+      >
+        <div
+          class="sc-fbNXWD"
+        >
+          <img
+            alt="user"
+            class="sc-dacFzL jMKvgH"
+            src="/logo192.png"
+          />
+           
+          u/
+          <a
+            class="sc-iBPRYJ YCdFv"
+            href="/user/1"
+          >
+            <span
+              class="sc-nFpLZ cxavoh"
+            />
+          </a>
+        </div>
+        <div
+          class="sc-gsxnyZ iqjuTq"
+        >
+          51 years ago
+        </div>
+      </div>
+      <div
+        class="sc-bXDlPE"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Open post renders correctly 1`] = `
+<div>
+  <img
+    alt="loading spinner"
+    data-testid="loading-spinner"
+    src="/Spinner-0.4s-211px.gif"
+    style="width: 10%;"
+  />
+</div>
+`;

@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createPostModal renders correctly 1`] = `
+<div>
+  <div
+    class="sc-fFubgz ijHakK"
+  >
+    <div
+      class="sc-idOhPF jKjgOu"
+    >
+      <h1>
+        Create a post 
+        in 
+      </h1>
+    </div>
+    <div
+      class="sc-dIUggk ciAjdj"
+    >
+      <div
+        class="sc-fKFyDc"
+      >
+        <h2>
+          Title
+        </h2>
+        <div
+          aria-label="Title"
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+          data-testid="title-field"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink="false"
+          >
+            Title
+          </label>
+          <div
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiOutlinedInput-input"
+              name="Title"
+              placeholder="Title"
+              type="text"
+              value=""
+            />
+            <fieldset
+              aria-hidden="true"
+              class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                class="PrivateNotchedOutline-legendLabelled-3"
+              >
+                <span>
+                  Title
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sc-bBXqnf cABrQa"
+      >
+        <h2>
+          Post
+        </h2>
+        <div
+          aria-label="Description"
+          class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink="false"
+          >
+            Post
+          </label>
+          <div
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-multiline MuiOutlinedInput-multiline"
+          >
+            <textarea
+              aria-invalid="false"
+              class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMultiline MuiOutlinedInput-inputMultiline"
+              name="Description"
+              placeholder="Post"
+              rows="6"
+            />
+            <fieldset
+              aria-hidden="true"
+              class="PrivateNotchedOutline-root-1 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                class="PrivateNotchedOutline-legendLabelled-3"
+              >
+                <span>
+                  Post
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sc-kfzAmx jdyDUV"
+    >
+      <div
+        class="sc-iqHYGH eEvvgq"
+      >
+        <button
+          class="ant-btn ant-btn-primary ant-btn-dangerous"
+          type="button"
+        >
+          <span>
+            Cancel
+          </span>
+        </button>
+      </div>
+      <div
+        class="sc-kEjbxe efLCim"
+      >
+        <button
+          class="ant-btn ant-btn-primary"
+          data-testid="submit-button"
+          type="button"
+        >
+          <span>
+            Create
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

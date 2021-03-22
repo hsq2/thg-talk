@@ -1,0 +1,82 @@
+image: artifactory.io.thehut.local:5000/ingenuity-tools/accelerator-runner:1.9
+
+variables:
+    GIT_SSL_NO_VERIFY: "true"
+    MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+    paths:
+        - .m2/repository
+        - front-end/node_modules
+    key: "$CI_COMMIT_REF_SLUG"
+    
+before_script:
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa
+  - echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtb0sMQn2vU93ANXqieuM7/6WU8n9ljH/PB6k3MLCLMZOCqVW8dxVrWOXR07ZMGgIWN/af0bKwGyAaaKLbhrbLz3e2mAKjqw4tUaRdxPVmvu6cOfH4XqiMRPvcuuk8/0NeFl2wNzeZdB9C1QS5wvDXW2qsAsVlmuZKhSGO1DR1Mi3cgxuddKi1XnotSwIyHHZS9r7HVU6wFU2o26pqx2Jv8EU2msgyYaWvyQDos/0VqMQ8jPxhaWI87HJmec/tjA11tGDS2UC0MYh5p6ZeOcF0YzcRvHjT+lR+VWhk+zUgZt6taI720bM7WlX1X0fY1YkxCXt6EAdqsqCI90jfikBV halls@UK-LT-14446" > ~/.ssh/id_rsa.pub
+  - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    
+stages:
+    - test
+    - build
+    - push
+    - deploy
+    
+# Test stage
+.test_triggers_template: &test_stage_triggers
+    tags:
+        - project
+    
+backend-test:
+    stage: test
+    script:
+        - ./mvnw test
+    <<: *test_stage_triggers
+    
+frontend-test:
+    stage: test
+    before_script:
+        - cd front-end
+        - yarn install
+    script:
+        - yarn test --passWithNoTests
+    <<: *test_stage_triggers
+
+# Build stage
+build:
+    stage: build
+    script:
+        - ./mvnw package -DskipTests spring-boot:repackage
+        - docker build --rm -t registry.accelerator.fun:5000/thg-talk:$CI_COMMIT_TAG .
+    rules:
+        - if: "$CI_COMMIT_TAG != null"
+    tags:
+        - project
+
+# Push stage
+push:
+    stage: push
+    cache: {}
+    script:
+        - docker login -u admin -p "$PASS" registry.accelerator.fun:5000
+        - docker push registry.accelerator.fun:5000/thg-talk:$CI_COMMIT_TAG
+        - docker rmi registry.accelerator.fun:5000/thg-talk:$CI_COMMIT_TAG
+    rules:
+        - if: "$CI_COMMIT_TAG != null"
+    tags:
+        - project
+        
+# Deploy stage
+deploy:
+    stage: deploy
+    cache: {}
+    script:
+        - scp production/docker-compose.yaml deploy@talk.accelerator.fun:/home/deploy/
+        - scp -r production/sql deploy@talk.accelerator.fun:/home/deploy/
+        - ssh deploy@talk.accelerator.fun "sudo docker login -u admin -p "$PASS" registry.accelerator.fun:5000 && export TAG=$CI_COMMIT_TAG && sudo docker-compose down && sudo -E docker-compose up -d --force-recreate"
+    rules:
+        - if: "$CI_COMMIT_TAG != null"
+    tags:
+        - project
